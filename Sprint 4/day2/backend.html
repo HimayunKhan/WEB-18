@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Investors</title>
+
+    <style>
+    #container{
+        display: flex;
+        justify-content: space-around;
+        background-color: blue;
+    }
+
+        h1{
+             font-size: 24px;
+             color: white;
+             
+             
+
+        }
+
+        form  {
+            margin-top: 50px;
+            display: flex;
+            margin-left: 5px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+    <h1>Frontend</h1>
+    <h1>Backend</h1>
+    </div>
+
+    <form action="">
+        <input type="text" placeholder="name" id="name">
+        <input type="text" placeholder="image url" id="img1">
+        <input type="text" placeholder="company logo" id="logo">
+        <input type="text" placeholder="role" id="role">
+        <input type="submit" >
+    </form>
+    
+    
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",myfunction)
+
+
+    var investors=JSON.parse(localStorage.getItem("investors") ) ||[];
+    function myfunction(event){
+        event.preventDefault()
+        
+
+        var a=document.querySelector("#name").value
+        var b=document.querySelector("#img1").value
+        var c=document.querySelector("#logo").value
+        var d=document.querySelector("#role").value
+
+        var obj={
+            name:a,
+            img:b,
+            logo:c,
+            role:d
+        };
+
+        investors.push(obj);
+
+
+        localStorage.setItem("investors",JSON.stringify(investors))
+        // window.location.href = "frontend.html"
+        alert("ok")
+    }
+</script>
