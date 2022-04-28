@@ -20,6 +20,7 @@
             var investor_company = document.createElement("img");
             investor_company.src = elem.logo;
             btn = document.createElement('button')
+            btn.id="button2"
             btn.innerText = 'delete'
             btn.addEventListener("click", function () {
                 // console.log('claling here')

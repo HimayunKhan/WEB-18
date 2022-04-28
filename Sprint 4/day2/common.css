@@ -137,6 +137,20 @@ table th {
   }
 
 
+  #button2 {
+    background-color: teal;
+    color: white;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+}
+
+
 
   @media all and (min-width:450px) and (max-width:750px){
    #card{
