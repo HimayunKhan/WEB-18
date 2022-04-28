@@ -1,79 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masai Investors</title>
+    <link rel="stylesheet" href="common.css">
 
-    <style>
-    #container{
-        display: flex;
-        justify-content: space-around;
-        background-color: blue;
-    }
-
-        h1{
-             font-size: 24px;
-             color: white;
-             
-             
-
-        }
-
-        form  {
+    <!-- <style>
+        form {
+            margin: 0 auto;
             margin-top: 50px;
-            display: flex;
-            margin-left: 5px;
+            width: 70%;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 30px;
+            border-radius: 10px;
 
         }
-    </style>
+
+        input[type="text"],
+        input[type="submit"] {
+            margin-top: 6px;
+
+
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type="submit"]:hover {
+            background-color: teal;
+            color: black;
+        }
+
+        input[type="submit"] {
+            background-color: teal;
+            color: white;
+            padding: 12px 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 50%;
+            font-size: 20px;
+            display: block;
+            margin: auto;
+        }
+
+
+
+
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        table td,
+        table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #8caacf;
+        }
+
+        table tr:hover {
+            background-color: #ddd;
+        }
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: teal;
+            color: white;
+            text-align: center;
+        }
+    </style> -->
 
 </head>
+
 <body>
     <div id="container">
-    <h1>Frontend</h1>
-    <h1>Backend</h1>
+        <div> <a href="frontend.html"> Frontend </a></div>
+        <div> <a href="backend.html"> Backend </a></div>
     </div>
 
-    <form action="">
-        <input type="text" placeholder="name" id="name">
-        <input type="text" placeholder="image url" id="img1">
-        <input type="text" placeholder="company logo" id="logo">
-        <input type="text" placeholder="role" id="role">
-        <input type="submit" >
+    <form id="abcd">
+        <input type="text" placeholder="Name" id="name"><br>
+        <input type="text" placeholder="Image Url" id="img1"><br>
+        <input type="text" placeholder="Company logo" id="logo"><br>
+        <input type="text" placeholder="Role" id="role"><br>
+        <input type="submit">
     </form>
-    
-    
+
+    <table>
+        <thead id="head">
+            <tr>
+
+                <th>Name</th>
+                <th>Image Url</th>
+                <th>Company logo</th>
+                <th>Role</th>
+
+            </tr>
+
+        <tbody>
+            <!-- Append your output to tbody -->
+        </tbody>
+
+        </thead>
+    </table>
+<script src="common.js"></script>
+<script src="backend.js"></script>
 </body>
+
 </html>
-
-<script>
-    document.querySelector("form").addEventListener("submit",myfunction)
-
-
-    var investors=JSON.parse(localStorage.getItem("investors") ) ||[];
-    function myfunction(event){
-        event.preventDefault()
-        
-
-        var a=document.querySelector("#name").value
-        var b=document.querySelector("#img1").value
-        var c=document.querySelector("#logo").value
-        var d=document.querySelector("#role").value
-
-        var obj={
-            name:a,
-            img:b,
-            logo:c,
-            role:d
-        };
-
-        investors.push(obj);
-
-
-        localStorage.setItem("investors",JSON.stringify(investors))
-        // window.location.href = "frontend.html"
-        alert("ok")
-    }
-</script>
